@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\PrestamoController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('usuarios', UsuarioController::class);
+Route::resource('grupos', GrupoController::class);
+Route::resource('prestamos', PrestamoController::class);
+Route::resource('pagos', PagoController::class);
